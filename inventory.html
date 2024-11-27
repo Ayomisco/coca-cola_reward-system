@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <div id="header_1"></div>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management - Retailer Dashboard</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        .low-stock {
+            background-color: #f8d7da;
+        }
+
+        .medium-stock {
+            background-color: #fff3cd;
+        }
+
+        .high-stock {
+            background-color: #d4edda;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .action-btns i {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="dashboard dashboard_1">
+    <div class="full_container">
+        <div class="inner_container">
+            <!-- Sidebar -->
+            <nav id="sidebar"></nav>
+            <!-- end sidebar -->
+
+            <!-- Right content -->
+            <div id="content">
+                <div id="topbar"></div>
+                <!-- Dashboard inner -->
+
+                <div class="midde_cont">
+                    <div class="container-fluid">
+                        <div class="row column_title">
+                            <div class="col-md-12">
+                                <div class="page_title">
+                                    <h2>Inventory Management</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Inventory Management Section -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Product Inventory</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <button class="btn btn-primary" data-toggle="modal"
+                                                data-target="#addProductModal">
+                                                <i class="fas fa-plus"></i> Add Product
+                                            </button>
+                                            <div class="input-group" style="width: 300px;">
+                                                <input type="text" class="form-control" placeholder="Search Product..."
+                                                    id="searchInput">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-secondary" type="button">
+                                                        <i class="fas fa-search"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Product Table -->
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Product Name</th>
+                                                    <th>Category</th>
+                                                    <th>Stock Level</th>
+                                                    <th>Price</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="productTableBody">
+                                                <tr class="low-stock">
+                                                    <td>1</td>
+                                                    <td>Smartphone</td>
+                                                    <td>Electronics</td>
+                                                    <td><span class="badge badge-danger">Low Stock</span></td>
+                                                    <td>$299</td>
+                                                    <td class="action-btns">
+                                                        <i class="fas fa-edit text-warning" data-toggle="modal"
+                                                            data-target="#editProductModal"></i>
+                                                        <i class="fas fa-trash text-danger"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="medium-stock">
+                                                    <td>2</td>
+                                                    <td>Laptop</td>
+                                                    <td>Electronics</td>
+                                                    <td><span class="badge badge-warning">Medium Stock</span></td>
+                                                    <td>$799</td>
+                                                    <td class="action-btns">
+                                                        <i class="fas fa-edit text-warning" data-toggle="modal"
+                                                            data-target="#editProductModal"></i>
+                                                        <i class="fas fa-trash text-danger"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="high-stock">
+                                                    <td>3</td>
+                                                    <td>Headphones</td>
+                                                    <td>Electronics</td>
+                                                    <td><span class="badge badge-success">In Stock</span></td>
+                                                    <td>$89</td>
+                                                    <td class="action-btns">
+                                                        <i class="fas fa-edit text-warning" data-toggle="modal"
+                                                            data-target="#editProductModal"></i>
+                                                        <i class="fas fa-trash text-danger"></i>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end dashboard inner -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Modal for Add Product -->
+    <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addProductModalLabel">Add New Product</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="addProductForm">
+                        <div class="form-group">
+                            <label for="productName">Product Name</label>
+                            <input type="text" class="form-control" id="productName" placeholder="Enter product name"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productCategory">Category</label>
+                            <select class="form-control" id="productCategory" required>
+                                <option>Electronics</option>
+                                <option>Clothing</option>
+                                <option>Accessories</option>
+                                <option>Home Appliances</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="productStock">Stock Level</label>
+                            <input type="number" class="form-control" id="productStock"
+                                placeholder="Enter stock quantity" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productPrice">Price</label>
+                            <input type="number" class="form-control" id="productPrice" placeholder="Enter price"
+                                required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" form="addProductForm">Save Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Edit Product -->
+    <div class="modal fade" id="editProductModal" tabindex="-1" role="dialog" aria-labelledby="editProductModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProductModalLabel">Edit Product</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="editProductForm">
+                        <div class="form-group">
+                            <label for="editProductName">Product Name</label>
+                            <input type="text" class="form-control" id="editProductName" value="Smartphone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editProductCategory">Category</label>
+                            <select class="form-control" id="editProductCategory" required>
+                                <option>Electronics</option>
+                                <option>Clothing</option>
+                                <option>Accessories</option>
+                                <option>Home Appliances</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editProductStock">Stock Level</label>
+                            <input type="number" class="form-control" id="editProductStock" value="50" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editProductPrice">Price</label>
+                            <input type="number" class="form-control" id="editProductPrice" value="299" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" form="editProductForm">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Optional: You can use jQuery or plain JavaScript to add functionality for product filtering, editing, and deletion
+    </script>
+
+    <script src="js/include.js"></script>
+
+</body>
+
+</html>

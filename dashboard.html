@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <div id="header_1"></div>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Retailer Dashboard</title>
+   <!-- Include Bootstrap CSS -->
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Optionally include a JS plugin for metrics visualization, e.g., Chart.js or another -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+   <style>
+      body {
+         background-color: #f4f7f6;
+         font-family: 'Arial', sans-serif;
+      }
+
+      .page_title h2 {
+         color: #ff7f50;
+      }
+
+      .dark_bg {
+         background-color: #333;
+         color: #fff;
+      }
+
+      .white_shd {
+         background-color: #fff;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+         border-radius: 8px;
+      }
+
+      .graph_head h2 {
+         color: #ff6347;
+      }
+
+      .progress-bar {
+         background-color: #ff6347 !important;
+      }
+
+      .progress-bar-animated {
+         animation: progress-bar-stripes 2s linear infinite;
+      }
+
+      .column3 {
+         margin-bottom: 30px;
+      }
+
+      .container-fluid {
+         padding-top: 20px;
+      }
+
+      .midde_cont {
+         background-color: #fff;
+         border-radius: 8px;
+         padding: 20px;
+      }
+
+      .heading1 h2 {
+         font-size: 1.5em;
+      }
+
+      .container-fluid .row {
+         margin-bottom: 20px;
+      }
+
+      .column_title h2 {
+         color: #333;
+      }
+
+      .full {
+         padding: 15px;
+      }
+
+      .btn-primary {
+         background-color: #ff7f50;
+         border-color: #ff6347;
+      }
+
+      .btn-primary:hover {
+         background-color: #ff6347;
+         border-color: #ff4500;
+      }
+
+      .progress {
+         margin: 10px 0;
+      }
+   </style>
+
+</head>
+
+<body class="dashboard dashboard_1">
+
+   <div class="full_container">
+      <div class="inner_container">
+         <!-- Sidebar  -->
+         <nav id="sidebar"></nav>
+
+         <!-- end sidebar -->
+         <!-- right content -->
+         <div id="content">
+            <!-- topbar -->
+
+            <div id="topbar"></div>
+
+            <!-- end topbar -->
+
+            <!-- dashboard inner -->
+
+            <div class="midde_cont">
+               <div class="container-fluid">
+                  <div class="row column_title">
+                     <div class="col-md-12">
+                        <div class="page_title">
+                           <h2>Retailer Dashboard</h2>
+                        </div>
+                     </div>
+                  </div>
+
+
+
+                  <!-- Analytics section -->
+                  <div class="row column3">
+                     <!-- Performance Metrics -->
+                     <div class="col-md-6">
+                        <div class="dark_bg full margin_bottom_30">
+                           <div class="full graph_head">
+                              <div class="heading1 margin_0">
+                                 <h2>Performance Metrics</h2>
+                              </div>
+                           </div>
+                           <div class="full graph_revenue">
+                              <div class="row">
+                                 <div class="col-md-12">
+                                    <!-- Chart.js for advanced metrics visualization -->
+                                    <canvas id="performanceChart"></canvas>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <!-- Rewards Section -->
+                     <div class="col-md-6">
+                        <div class="white_shd full margin_bottom_30">
+                           <div class="full graph_head">
+                              <div class="heading1 margin_0">
+                                 <h2>Your Rewards</h2>
+                              </div>
+                           </div>
+                           <div class="full progress_bar_inner">
+                              <div class="row">
+                                 <div class="col-md-12">
+                                    <!-- Display the retailer's rewards and points -->
+                                    <p><strong>Total Rewards Points:</strong> 450</p>
+                                    <p><strong>Reward Tier:</strong> Silver</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                  </div>
+
+                  <!-- Business Details -->
+                  <div class="white_shd full margin_bottom_30">
+                     <div class="full graph_head">
+                        <div class="heading1 margin_0">
+                           <h2>Your Business Details</h2>
+                        </div>
+                     </div>
+                     <div class="full gallery_section_inner padding_infor_info">
+                        <div class="row">
+                           <div class="col-md-4">
+                              <p><strong>Business Name:</strong> XYZ Retailers</p>
+                              <p><strong>Location:</strong> Lagos, Nigeria</p>
+                           </div>
+                           <div class="col-md-4">
+                              <p><strong>Business Category:</strong> Soft drinks</p>
+                              <p><strong>Contact:</strong> xyz@retailers.com</p>
+                           </div>
+                           <div class="col-md-4">
+                              <p><strong>Total Sales:</strong> 1200 units</p>
+                              <p><strong>Active Customers:</strong> 350</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Comparisons Section (Anonymous Analytics) -->
+                  <div class="white_shd full margin_bottom_30">
+                     <div class="full graph_head">
+                        <div class="heading1 margin_0">
+                           <h2>Compare Your Performance with Others</h2>
+                        </div>
+                     </div>
+                     <div class="full progress_bar_inner">
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div class="progress_bar">
+                                 <p><strong>Your Performance:</strong> 73%</p>
+                                 <div class="progress skill-bar">
+                                    <div class="progress-bar progress-bar-animated progress-bar-striped"
+                                       role="progressbar" style="width: 73%;"></div>
+                                 </div>
+                                 <p><strong>Top Performer:</strong> 90%</p>
+                                 <div class="progress skill-bar">
+                                    <div class="progress-bar progress-bar-animated progress-bar-striped"
+                                       role="progressbar" style="width: 90%;"></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+
+               </div>
+
+               <!-- footer -->
+               <div id="footer"></div>
+               <!-- footer -->
+
+            </div>
+
+            <!-- end dashboard inner -->
+
+         </div>
+      </div>
+   </div>
+
+   <div id="main_footer"></div>
+
+   <!-- Include Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+   <script>
+      var ctx = document.getElementById('performanceChart').getContext('2d');
+      var performanceChart = new Chart(ctx, {
+         type: 'bar',
+         data: {
+            labels: ['January', 'February', 'March'],
+            datasets: [{
+               label: 'Your Performance',
+               data: [65, 59, 80],
+               backgroundColor: 'rgba(54, 162, 235, 0.2)',
+               borderColor: 'rgba(54, 162, 235, 1)',
+               borderWidth: 1
+            }]
+         },
+         options: {
+            scales: {
+               y: {
+                  beginAtZero: true
+               }
+            }
+         }
+      });
+   </script>
+
+   <script src="js/include.js"></script>
+</body>
+
+</html>

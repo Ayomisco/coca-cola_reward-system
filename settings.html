@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+         <div id="header_1"></div>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Settings - Retailer Dashboard</title>
+   <!-- Include Bootstrap CSS -->
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+   <style>
+      .card-header {
+         background-color: #007bff;
+         color: white;
+      }
+
+      .form-control:focus {
+         box-shadow: none;
+         border-color: #007bff;
+      }
+
+      .setting-section {
+         margin-bottom: 30px;
+      }
+
+      .setting-section .section-title {
+         font-size: 1.25rem;
+         font-weight: bold;
+      }
+
+      .setting-section .form-group {
+         margin-bottom: 15px;
+      }
+
+      .save-btn {
+         background-color: #28a745;
+         color: white;
+      }
+
+      .cancel-btn {
+         background-color: #dc3545;
+         color: white;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="full_container">
+      <div class="inner_container">
+         <!-- Sidebar -->
+         <nav id="sidebar"></nav>
+         <!-- end sidebar -->
+
+         <!-- Right content -->
+         <div id="content">
+            <div id="topbar"></div>
+            <!-- Dashboard inner -->
+
+            <div class="midde_cont">
+               <div class="container-fluid">
+                  <div class="row column_title">
+                     <div class="col-md-12">
+                        <div class="page_title">
+                           <h2>Settings</h2>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Settings Section -->
+                  <div class="row">
+                     <div class="col-md-12">
+                        <div class="card">
+                           <div class="card-header">
+                              <h3>Account Settings</h3>
+                           </div>
+                           <div class="card-body">
+                              <!-- Profile Information -->
+                              <div class="setting-section">
+                                 <div class="section-title">Profile Information</div>
+                                 <form id="profileForm">
+                                    <div class="form-group">
+                                       <label for="fullName">Full Name</label>
+                                       <input type="text" class="form-control" id="fullName" value="John Doe">
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="email">Email</label>
+                                       <input type="email" class="form-control" id="email" value="johndoe@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="phone">Phone</label>
+                                       <input type="tel" class="form-control" id="phone" value="+1 (234) 567-890">
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="address">Address</label>
+                                       <textarea class="form-control" id="address"
+                                          rows="3">123 Main Street, Springfield</textarea>
+                                    </div>
+                                    <button type="submit" class="btn save-btn">Save Changes</button>
+                                 </form>
+                              </div>
+
+                              <!-- Change Password Section -->
+                              <div class="setting-section">
+                                 <div class="section-title">Change Password</div>
+                                 <form id="changePasswordForm">
+                                    <div class="form-group">
+                                       <label for="currentPassword">Current Password</label>
+                                       <input type="password" class="form-control" id="currentPassword"
+                                          placeholder="Enter your current password">
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="newPassword">New Password</label>
+                                       <input type="password" class="form-control" id="newPassword"
+                                          placeholder="Enter a new password">
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="confirmPassword">Confirm New Password</label>
+                                       <input type="password" class="form-control" id="confirmPassword"
+                                          placeholder="Confirm your new password">
+                                    </div>
+                                    <button type="submit" class="btn save-btn">Change Password</button>
+                                 </form>
+                              </div>
+
+                              <!-- Notification Settings -->
+                              <div class="setting-section">
+                                 <div class="section-title">Notification Preferences</div>
+                                 <form id="notificationForm">
+                                    <div class="form-check">
+                                       <input type="checkbox" class="form-check-input" id="emailNotifications" checked>
+                                       <label class="form-check-label" for="emailNotifications">Receive email
+                                          notifications</label>
+                                    </div>
+                                    <div class="form-check">
+                                       <input type="checkbox" class="form-check-input" id="smsNotifications">
+                                       <label class="form-check-label" for="smsNotifications">Receive SMS
+                                          notifications</label>
+                                    </div>
+                                    <div class="form-check">
+                                       <input type="checkbox" class="form-check-input" id="pushNotifications" checked>
+                                       <label class="form-check-label" for="pushNotifications">Enable push
+                                          notifications</label>
+                                    </div>
+                                    <button type="submit" class="btn save-btn">Save Preferences</button>
+                                 </form>
+                              </div>
+
+                              <!-- System Settings -->
+                              <div class="setting-section">
+                                 <div class="section-title">System Settings</div>
+                                 <form id="systemSettingsForm">
+                                    <div class="form-group">
+                                       <label for="timezone">Timezone</label>
+                                       <select class="form-control" id="timezone">
+                                          <option value="GMT">GMT</option>
+                                          <option value="EST">EST</option>
+                                          <option value="PST">PST</option>
+                                          <option value="CST">CST</option>
+                                          <option value="IST">IST</option>
+                                       </select>
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="language">Language</label>
+                                       <select class="form-control" id="language">
+                                          <option value="en">English</option>
+                                          <option value="es">Spanish</option>
+                                          <option value="fr">French</option>
+                                          <option value="de">German</option>
+                                          <option value="zh">Chinese</option>
+                                       </select>
+                                    </div>
+                                    <!--
+                                    <div class="form-group">
+                                       <label for="currency">Currency</label>
+                                       <select class="form-control" id="currency">
+                                          <option value="USD">$ USD</option>
+                                          <option value="EUR">€ EUR</option>
+                                          <option value="GBP">£ GBP</option>
+                                          <option value="INR">₹ INR</option>
+                                       </select>
+                                    </div>
+
+                                    -->
+                                    <button type="submit" class="btn save-btn">Save Settings</button>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- end dashboard inner -->
+         </div>
+      </div>
+   </div>
+
+   <!-- Footer -->
+   <div id="main_footer"></div>
+
+   <!-- Include Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <script>
+      // Optional: You can use jQuery or plain JavaScript to add functionality for saving and validating form data
+      $('#profileForm').submit(function (e) {
+         e.preventDefault();
+         alert('Profile updated successfully!');
+      });
+      $('#changePasswordForm').submit(function (e) {
+         e.preventDefault();
+         alert('Password changed successfully!');
+      });
+      $('#notificationForm').submit(function (e) {
+         e.preventDefault();
+         alert('Notification preferences saved!');
+      });
+      $('#systemSettingsForm').submit(function (e) {
+         e.preventDefault();
+         alert('System settings updated!');
+      });
+   </script>
+
+      <script src="js/include.js"></script>
+
+</body>
+
+</html>
