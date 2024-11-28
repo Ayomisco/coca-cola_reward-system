@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="js/include.js"></script>
+
+    <div id="header_1"></div>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics Details</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optionally include a JS plugin for metrics visualization, e.g., Chart.js or another -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .page_title h2 {
+            color: #333;
+        }
+
+       
+
+        .white_shd {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+       
+
+        .card-header {
+            background-color: #d44343;
+            color: white;
+                        text-align: center;
+
+        }
+
+        .table th, .table td {
+            text-align: center;
+        }
+
+        .level_icon {
+            font-size: 20px;
+        }
+
+        .gold { color: gold; }
+        .silver { color: silver; }
+        .bronze { color: #cd7f32; }
+        .starter { color: #32cd32; }
+
+
+         .highlight-current-user {
+            animation: flash 1s infinite;
+            font-weight: bold;
+            color: #fff;
+            background-color: #ff7b00;
+        }
+
+        @keyframes flash {
+            0% {
+                background-color: #fff700;
+            }
+            50% {
+                background-color: #b37a00;
+            }
+            100% {
+                background-color: #ff8000;
+            }
+        }
+
+        .view-more-btn {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .container-fluid {
+            padding-top: 20px;
+        }
+
+        .page_title h2 {
+            color: #333;
+        }
+
+        .stat_link {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .stat_link:hover {
+            color: #0056b3;
+        }
+    </style>
+
+</head>
+
+<body class="dashboard dashboard_1">
+
+    <div class="full_container">
+        <div class="inner_container">
+            <!-- Sidebar  -->
+            <nav id="sidebar"></nav>
+
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+                <!-- topbar -->
+
+                <div id="topbar"></div>
+
+                <!-- end topbar -->
+
+                <!-- dashboard inner -->
+
+                <div class="midde_cont">
+                    <div class="container-fluid">
+                        <div class="row column_title">
+                            <div class="col-md-12">
+                                <div class="page_title">
+                                    <h2>Week 1 - Leaderboard</h2>
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                        <!-- Table section -->
+                        
+                        <div class="card-body">
+                            <table class="table table-striped" id="leaderboard-table">
+                                <thead>
+                                    <tr>
+                                        <th>S/N</th>
+                                        <th>Retailer ID</th>
+                                        <th>Reward Points</th>
+                                        <th>Level</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="leaderboard-body">
+                                    <!-- Initial Rows -->
+                                    <tr>
+                                        <td>1</td>
+                                        <td>C1234</td>
+                                        <td>150</td>
+                                        <td><i class="fas fa-medal gold level_icon"></i> Gold</td>
+                                    </tr>
+
+                                     <tr>
+                                        <td>2</td>
+                                        <td>C1274</td>
+                                        <td>150</td>
+                                        <td><i class="fas fa-medal gold level_icon"></i> Gold</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>3</td>
+                                        <td>C1774</td>
+                                        <td>149</td>
+                                        <td><i class="fas fa-medal gold level_icon"></i> Gold</td>
+                                    </tr>
+                                    
+                                     <tr>
+                                        <td>4</td>
+                                        <td>C1321</td>
+                                        <td>148</td>
+                                        <td><i class="fas fa-medal gold level_icon"></i> Gold</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>5</td>
+                                        <td>C0982</td>
+                                        <td>147</td>
+                                        <td><i class="fas fa-medal gold level_icon"></i> Gold</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>6</td>
+                                        <td>C9673</td>
+                                        <td>147</td>
+                                        <td><i class="fas fa-medal gold level_icon"></i> Gold</td>
+                                    </tr>
+
+                                   
+
+                                    <!-- Current User -->
+                                    <tr class="highlight-current-user">
+                                        <td>8</td>
+                                        <td>C0245</td>
+                                        <td>142</td>
+                                        <td><i class="fas fa-star gold level_icon"></i> Gold</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>9</td>
+                                        <td>C0111</td>
+                                        <td>138</td>
+                                        <td><i class="fas fa-medal gold level_icon"></i> Gold</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>10</td>
+                                        <td>C6453</td>
+                                        <td>90</td>
+                                        <td><i class="fas fa-medal silver level_icon"></i> Silver</td>
+                                    </tr>
+
+                                    <!-- Current User -->
+                                    <tr >
+                                        <td>11</td>
+                                        <td>C0854</td>
+                                        <td>35</td>
+                                        <td><i class="fas fa-star silver level_icon"></i> Silver</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>12</td>
+                                        <td>C53667</td>
+                                        <td>90</td>
+                                        <td><i class="fas fa-medal silver level_icon"></i> Silver</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>13</td>
+                                        <td>C6453</td>
+                                        <td>90</td>
+                                        <td><i class="fas fa-medal silver level_icon"></i> Silver</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>14</td>
+                                        <td>C3743</td>
+                                        <td>90</td>
+                                        <td><i class="fas fa-medal silver level_icon"></i> Silver</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>C3433</td>
+                                        <td>90</td>
+                                        <td><i class="fas fa-medal silver level_icon"></i> Silver</td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td>C5678</td>
+                                        <td>90</td>
+                                        <td><i class="fas fa-medal silver level_icon"></i> Silver</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>17</td>
+                                        <td>C1121</td>
+                                        <td>90</td>
+                                        <td><i class="fas fa-medal silver level_icon"></i> Silver</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>18</td>
+                                        <td>C0931</td>
+                                        <td>90</td>
+                                        <td><i class="fas fa-medal silver level_icon"></i> Silver</td>
+                                    </tr>
+                                    <tr>
+                                        <td>19</td>
+                                        <td>C0001</td>
+                                        <td>50</td>
+                                        <td><i class="fas fa-medal bronze level_icon"></i> Bronze</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>20</td>
+                                        <td>C1011</td>
+                                        <td>50</td>
+                                        <td><i class="fas fa-medal bronze level_icon"></i> Bronze</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>21</td>
+                                        <td>C1011</td>
+                                        <td>50</td>
+                                        <td><i class="fas fa-medal bronze level_icon"></i> Bronze</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>22</td>
+                                        <td>C1011</td>
+                                        <td>50</td>
+                                        <td><i class="fas fa-medal bronze level_icon"></i> Bronze</td>
+                                    </tr>
+                                   
+                                </tbody>
+                            </table>
+                            <!-- View More Button -->
+                            <div class="view-more-btn">
+                                <button class="btn btn-primary" id="view-more">View More</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <!-- footer -->
+                <div id="footer"></div>
+                <!-- footer -->
+
+            </div>
+
+            <!-- end dashboard inner -->
+
+        </div>
+    </div>
+    </div>
+
+    <div id="main_footer"></div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+
+
+     <script>
+        // Mock Data for "View More"
+        const additionalRows = [
+            { sn: 23, id: "C3456", points: 25, level: "Starter", icon: "starter" },
+            { sn: 24, id: "C4567", points: 20, level: "Starter", icon: "starter" },
+            { sn: 25, id: "C5678", points: 15, level: "Starter", icon: "starter" },
+            { sn: 26, id: "C6789", points: 10, level: "Starter", icon: "starter" }
+        ];
+
+        // View More Button Logic
+        document.getElementById("view-more").addEventListener("click", () => {
+            const tbody = document.getElementById("leaderboard-body");
+            additionalRows.forEach(row => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${row.sn}</td>
+                    <td>${row.id}</td>
+                    <td>${row.points}</td>
+                    <td><i class="fas fa-star ${row.icon} level_icon"></i> ${row.level}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // Hide button after loading rows
+            document.getElementById("view-more").style.display = "none";
+        });
+    </script>
+</body>
+
+</html>
