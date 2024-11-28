@@ -93,15 +93,7 @@ document.getElementById("retailerRegistrationForm").addEventListener("submit", f
         return;
     }
 
-    // Validate Email
-    if (!emailPattern.test(email)) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Invalid Email',
-            text: 'Please enter a valid email address.'
-        });
-        return;
-    }
+
 
     // Validate Contact Number
     if (!contactNumberPattern.test(phoneNumber)) {
