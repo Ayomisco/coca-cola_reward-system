@@ -730,7 +730,7 @@ a:focus {
     border: none;
     padding: 14px 26px 14px;
     font-size: 21px;
-    background: #ff5722;
+    background: #a60e00;
     margin-right: 0;
     cursor: pointer;
     float: left;
@@ -743,7 +743,7 @@ a:focus {
     position: absolute;
     right: -2px;
     top: -7px;
-    background: #ff5722;
+    background: #a60e00;
     border-radius: 100%;
     color: #fff;
     font-weight: 600;
@@ -823,7 +823,6 @@ span {
 #sidebar {
     min-width: 280px;
     max-width: 280px;
-    background-color: #15283c;
     color: #fff;
     transition: all 0.3s;
     position: relative;
@@ -831,7 +830,8 @@ span {
     box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.4);
     float: left;
     width: 100%;
-    background-image: url('images/layout_img/pattern_h.png');
+   /* background-image: url('images/layout_img/pattern_h.png'); */
+    background:  #a60e00;
     position: fixed;
     height: 100%;
     overflow: auto;
@@ -846,6 +846,9 @@ span {
 
 #sidebar ul li a {
     text-align: left;
+}
+.sidebar-header{
+    background: #f40000;
 }
 
 #sidebar .sidebar-header strong {
@@ -943,7 +946,7 @@ a[data-toggle="collapse"] {
 
 .topbar .navbar {
     padding: 0;
-    background: #15283c;
+    background: #f40000;;
     border: none;
     border-radius: 0;
 }
@@ -954,7 +957,7 @@ a[data-toggle="collapse"] {
 
 .sidebar_user_info {
     padding: 15px 25px;
-    background: #214162;
+    background: #ec1111;;
 }
 
 .user_img img {
@@ -1671,7 +1674,8 @@ a[data-toggle="collapse"] {
 -------------------------------------------------------------------*/
 
 .dash_head {
-    background-image: url('images/layout_img/pattern_h.png');
+   /* background-image: url('images/layout_img/pattern_h.png'); */
+    background: linear-gradient(90deg, #f40000, #f97c00, #ffeb3b);    
     font-weight: normal;
     height: auto;
     border-radius: 5px 5px 0 0;
@@ -3255,14 +3259,14 @@ table.projects tr td:first-child {
 /*------------------------------------------------------------------
     25. Login Section
 -------------------------------------------------------------------*/
-
+/* General Styles */
 .login {
-    background: #eee;
+    background: #f40000;
 }
 
 .full_height {
-   /* height: 100vh; */
-   height: auto;
+    height: auto;
+    /* Adjusts height dynamically */
 }
 
 .login_section {
@@ -3270,30 +3274,74 @@ table.projects tr td:first-child {
     background: #fff;
     min-height: 540px;
     width: 100%;
-    box-shadow: 0px 0 10px -8px #000;
-    margin: 0px;
+    box-shadow: 0px 0 10px -8px #f40000;
+    margin: 0 auto;
+    /* Center align */
     padding: 0;
     border-radius: 10px;
     overflow: hidden;
 }
 
 .logo_login {
-    background: url('images/layout_img/login_image.jpg');
-    padding: 50px 0;
-    background-position: center center;
+    background: url('images/landing_page/cocacola-banner.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
+    height: 300px;
+    padding: 50px 0;
 }
 
+/* Image Overlay */
 .logo_login::after {
     content: "";
     display: block;
     width: 100%;
     height: 100%;
     position: absolute;
-    background: rgba(21, 40, 60, .8);
-    top: 0px;
+    top: 0;
     left: 0;
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .login_section {
+        max-width: 100%;
+        /* Full width for mobile/tablets */
+        border-radius: 0;
+        /* Remove border-radius */
+        box-shadow: none;
+        /* Remove shadow */
+    }
+
+    .logo_login {
+        height: 150px;
+        width: 1000px;
+        /* Show image in full height for mobile/tablets */
+        /* Ensure the image is centered */
+    }
+
+    .logo_login::after {
+        /*  background: rgba(0, 0, 0, 0.5);
+        Optional overlay for better visibility */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo_login {
+        /* Reduce padding on smaller screens */
+        height: 150px;
+            width: 140%;
+        background-size: 390px;
+        
+            background-repeat: no-repeat;
+    }
+
+    .register{
+        margin-top: 30px;
+        margin-right: 200px;
+    }
+}
+
 
 .logo_login div {
     position: relative;
@@ -3304,6 +3352,7 @@ table.projects tr td:first-child {
     padding: 50px 50px;
     float: left;
     width: 100%;
+  
 }
 
 .login_form form {

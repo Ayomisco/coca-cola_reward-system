@@ -1,4 +1,60 @@
-document.getElementById("registrationForm").addEventListener("submit", function(event) {
+document.getElementById("nextSectionBtn").addEventListener("click", function () {
+   document.getElementById("section1").style.display = "none";
+   document.getElementById("section2").style.display = "block";
+});
+
+document.getElementById("previousSectionBtn").addEventListener("click", function () {
+   document.getElementById("section2").style.display = "none";
+   document.getElementById("section1").style.display = "block";
+});
+
+const stateCityMapping = {
+   Lagos: ["Ikeja", "Lekki", "Surulere"],
+   Abuja: ["Garki", "Wuse", "Maitama"],
+   Kano: ["Kano", "Bichi", "Gwale"],
+   Rivers: ["Port Harcourt", "Obio Akpor", "Okrika"],
+   Oyo: ["Ibadan", "Ogbomosho", "Iseyin"]
+};
+
+const cityBA = {
+   Ikeja: ["John Doe", "Jane Smith"],
+   Lekki: ["Chris Brown", "Emma Watson"],
+   Kano: ["Abdul Mohammed", "Fatima Bello"],
+   "Port Harcourt": ["Samuel Kalu", "Angela Uche"],
+   Ibadan: ["Tunde Balogun", "Aisha Bello"]
+};
+
+document.getElementById("state").addEventListener("change", function () {
+   const state = this.value;
+   const citySelect = document.getElementById("city");
+   citySelect.innerHTML = '<option value="" disabled selected>Select a city</option>';
+   if (stateCityMapping[state]) {
+      stateCityMapping[state].forEach(city => {
+         const option = document.createElement("option");
+         option.value = city;
+         option.textContent = city;
+         citySelect.appendChild(option);
+      });
+   }
+});
+
+document.getElementById("city").addEventListener("change", function () {
+   const city = this.value;
+   const baSelect = document.getElementById("brandAmbassador");
+   baSelect.innerHTML = '<option value="" disabled selected>Select a brand ambassador</option>';
+   if (cityBA[city]) {
+      cityBA[city].forEach(ba => {
+         const option = document.createElement("option");
+         option.value = ba;
+         option.textContent = ba;
+         baSelect.appendChild(option);
+      });
+   }
+});
+
+
+
+document.getElementById("retailerRegistrationForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent default form submission
 
     // Retrieve form values

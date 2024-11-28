@@ -13,6 +13,24 @@
    <link rel="stylesheet" href="css/colors.css" />
    <link rel="stylesheet" href="css/custom.css" />
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <style>
+      .form-select,
+      .form-control {
+         width: 100%;
+      }
+
+      @media (max-width: 768px) {
+
+         .form-select,
+         .form-control {
+            font-size: 0.9rem;
+         }
+
+         button {
+            width: 100%;
+         }
+      }
+   </style>
 </head>
 
 <body class="inner_page login">
@@ -22,80 +40,105 @@
             <div class="login_section">
                <div class="logo_login">
                   <div class="center">
-                     <img width="210" src="images/logo/coke.png" alt="Coca-Cola Logo" />
                   </div>
                   <br>
-                  <div style="color: white; text-align: center; text-transform: uppercase;" class="center">Retailer
-                     Onboarding Form</div>
                </div>
                <div class="login_form">
                   <form id="retailerRegistrationForm" action="dashboard.html" method="get">
-                     <fieldset>
-                        <div class="mb-3">
-                           <label for="storeName" class="form-label">Store Name</label>
-                           <input type="text" class="form-control" id="storeName" name="store_name"
-                              placeholder="Enter your store name" required />
-                        </div>
-                        <div class="mb-3">
-                           <label for="storeAddress" class="form-label">Store Address</label>
-                           <input type="text" class="form-control" id="storeAddress" name="store_address"
-                              placeholder="Enter store address" required />
-                        </div>
-                        <div class="mb-3">
-                           <label for="retailerID" class="form-label">Coca-Cola Retailer ID</label>
-                           <input type="text" class="form-control" id="retailerID" name="retailer_id"
-                              placeholder="Enter retailer ID" required />
-                        </div>
-                        <div class="mb-3">
-                           <label for="ownerName" class="form-label">Owner's Full Name</label>
-                           <input type="text" class="form-control" id="ownerName" name="owner_name"
-                              placeholder="Owner's full name" required />
-                        </div>
-                        <div class="mb-3">
-                           <label for="email" class="form-label">Email Address</label>
-                           <input type="email" class="form-control" id="email" name="email" placeholder="Email address"
-                              required />
-                        </div>
-                        <div class="mb-3">
-                           <label for="phoneNumber" class="form-label">Phone Number</label>
-                           <input type="tel" class="form-control" id="phoneNumber" name="phone_number"
-                              placeholder="Phone number" required />
-                        </div>
-                        <div class="mb-3">
-                           <label for="password" class="form-label">Password</label>
-                           <input type="password" class="form-control" id="password" name="password"
-                              placeholder="Create a password" required />
-                        </div>
-                        <div class="mb-3">
-                           <label for="confirmPassword" class="form-label">Confirm Password</label>
-                           <input type="password" class="form-control" id="confirmPassword" name="confirm_password"
-                              placeholder="Confirm your password" required />
-                        </div>
-                        <div class="field">
-                           <label>Already have an account? <a class="" style="color: red;"
-                                 href="authentication/login.html">Login</a></label>
-                        </div>
-                        <div class="d-flex center">
-                           <button type="submit" class="btn btn-primary">Register</button>
-                        </div>
-                     </fieldset>
+                     <!-- First Section -->
+                     <div id="section1">
+
+                        <fieldset>
+                           <p style="text-align: center; font-size: larger;">Basic Information</p>
+                           <div class="mb-3">
+                              <label for="storeName" class="form-label">Store Name</label>
+                              <input type="text" class="form-control" id="storeName" name="store_name"
+                                 placeholder="Enter your store name" required />
+                           </div>
+                           <div class="mb-3">
+                              <label for="storeAddress" class="form-label">Store Address</label>
+                              <input type="text" class="form-control" id="storeAddress" name="store_address"
+                                 placeholder="Enter store address" required />
+                           </div>
+                           <div class="mb-3">
+                              <label for="ownerName" class="form-label">Owner's Full Name</label>
+                              <input type="text" class="form-control" id="ownerName" name="owner_name"
+                                 placeholder="Owner's full name" required />
+                           </div>
+
+                           <div class="mb-3">
+                              <label for="phoneNumber" class="form-label">Phone Number</label>
+                              <input type="tel" class="form-control" id="phoneNumber" name="phone_number" placeholder="Phone number" required />
+                           </div>
+
+                           <div class="mb-3">
+                              <label for="email" class="form-label">Email Address</label>
+                              <input type="email" class="form-control" id="email" name="email"
+                                 placeholder="Email address" required />
+                           </div>
+                           <div class="mb-3">
+                              <label for="password" class="form-label">Password</label>
+                              <input type="password" class="form-control" id="password" name="password"
+                                 placeholder="Password" required />
+                           </div>
+                           <div class="mb-3">
+                              <label for="confirmPassword" class="form-label">Confirm Password</label>
+                              <input type="password" class="form-control" id="confirmPassword" name="confirm_password"
+                                 placeholder="Confirm password" required />
+                           </div>
+                          
+                           <div class="d-flex justify-content-end">
+                              <button type="button" class="btn btn-danger" id="nextSectionBtn">Next</button>
+                           </div>
+                        </fieldset>
+                     </div>
+
+                     <!-- Second Section -->
+                     <div id="section2" style="display: none;">
+                        <fieldset>
+                           <div class="mb-3">
+                              <label for="location" class="form-label text-black-50">Brand Ambassador</label>
+                              
+                           </div>
+                           <div class="mb-3">
+                              <label for="state" class="form-label">State</label>
+                              <select class="form-select form-control" id="state" name="state" required>
+                                 <option value="" disabled selected>Select a state</option>
+                                 <option value="Lagos">Lagos</option>
+                                 <option value="Abuja">Abuja</option>
+                                 <option value="Kano">Kano</option>
+                                 <option value="Rivers">Rivers</option>
+                                 <option value="Oyo">Oyo</option>
+                              </select>
+                           </div>
+                           <div class="mb-3">
+                              <label for="city" class="form-label">City</label>
+                              <select class="form-select form-control" id="city" name="city" required>
+                                 <option value="" disabled selected>Select a city</option>
+                              </select>
+                           </div>
+                           <div class="mb-3">
+                              <label for="brandAmbassador" class="form-label">Brand Ambassador (BA)</label>
+                              <select class="form-select form-control" id="brandAmbassador" name="brandAmbassador" required>
+                                 <option value="" disabled selected>Select a brand ambassador</option>
+                              </select>
+                           </div>
+                           <div class="d-flex justify-content-between">
+                              <button type="button" class="btn btn-secondary" id="previousSectionBtn">Back</button>
+                              <button type="submit" class="btn btn-danger">Register</button>
+                           </div>
+                        </fieldset>
+                     </div>
                   </form>
                </div>
             </div>
          </div>
       </div>
    </div>
+
    <script src="js/jquery.min.js"></script>
-   <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
-   <script src="js/animate.js"></script>
-   <script src="js/bootstrap-select.js"></script>
-   <script src="js/perfect-scrollbar.min.js"></script>
-   <script>
-      var ps = new PerfectScrollbar('#sidebar');
-   </script>
-   <script src="js/custom.js"></script>
-      <script src="js/reg_val.js"></script>
+   <script src="js/reg_val.js"></script>
 </body>
 
 </html>
