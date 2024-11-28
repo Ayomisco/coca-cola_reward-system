@@ -53,14 +53,12 @@ document.getElementById("city").addEventListener("change", function () {
 });
 
 
-
 document.getElementById("retailerRegistrationForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent default form submission
 
     // Retrieve form values
     const storeName = document.getElementById("storeName").value.trim();
     const storeAddress = document.getElementById("storeAddress").value.trim();
-    const retailerID = document.getElementById("retailerID").value.trim();
     const ownerName = document.getElementById("ownerName").value.trim();
     const email = document.getElementById("email").value.trim();
     const phoneNumber = document.getElementById("phoneNumber").value.trim();
@@ -74,7 +72,7 @@ document.getElementById("retailerRegistrationForm").addEventListener("submit", f
     const contactNumberPattern = /^\d{10,15}$/;
 
     // Perform simple validation (can be expanded as per your requirements)
-    if (!storeName || !storeAddress || !retailerID || !ownerName || !email || !phoneNumber || !password || password !== confirmPassword) {
+    if (!storeName || !storeAddress || !ownerName || !email || !phoneNumber || !password || password !== confirmPassword) {
         Swal.fire({
             icon: 'error',
             title: 'Invalid Input',
@@ -82,7 +80,6 @@ document.getElementById("retailerRegistrationForm").addEventListener("submit", f
         });
         return;
     }
-
 
     // Validate Business Name
     if (storeName === "") {
@@ -152,11 +149,12 @@ document.getElementById("retailerRegistrationForm").addEventListener("submit", f
         confirmButtonText: 'OK'
     }).then((result) => {
         if (result.isConfirmed) {
-            // Redirect or submit the form
-            window.location.replace("dashboard.html"); // Replace with the actual URL
+            // If the form is valid, submit it
+            document.getElementById("retailerRegistrationForm").submit();  // Trigger the form submission
         }
     });
 });
+
 
 
 document.getElementById("loginForm").addEventListener("submit", validateLogin);

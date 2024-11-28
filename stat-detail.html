@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <div id="header_1"></div>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics Details</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optionally include a JS plugin for metrics visualization, e.g., Chart.js or another -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .page_title h2 {
+            color: #333;
+        }
+
+       
+
+        .white_shd {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+       
+
+        .card-header {
+            background-color: #d44343;
+            color: white;
+        }
+
+        .table th, .table td {
+            text-align: center;
+        }
+
+        .level_icon {
+            font-size: 20px;
+        }
+
+        .gold { color: gold; }
+        .silver { color: silver; }
+        .bronze { color: #cd7f32; }
+        .starter { color: #32cd32; }
+
+        .container-fluid {
+            padding-top: 20px;
+        }
+
+        .page_title h2 {
+            color: #333;
+        }
+
+        .stat_link {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .stat_link:hover {
+            color: #0056b3;
+        }
+    </style>
+
+</head>
+
+<body class="dashboard dashboard_1">
+
+    <div class="full_container">
+        <div class="inner_container">
+            <!-- Sidebar  -->
+            <nav id="sidebar"></nav>
+
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+                <!-- topbar -->
+
+                <div id="topbar"></div>
+
+                <!-- end topbar -->
+
+                <!-- dashboard inner -->
+
+                <div class="midde_cont">
+                    <div class="container-fluid">
+                        <div class="row column_title">
+                            <div class="col-md-12">
+                                <div class="page_title">
+                                    <h3>Your Unique ID: <span id="user-id">C2344</span></h3>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- User Info Card -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card white_shd">
+                                    <div class="card-header">
+                                    <h2>Jan 2024 - Stats: T-Shirts</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <br><br><br>
+
+                        <!-- Table section -->
+                        
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>S/N</th>
+                                    <th>Retailer ID</th>
+                                    <th>Reward Points</th>
+                                    <th>Level</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>C1234</td>
+                                    <td>150</td>
+                                    <td><i class="fas fa-medal gold level_icon"></i> Odogwu</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>C5678</td>
+                                    <td>90</td>
+                                    <td><i class="fas fa-medal silver level_icon"></i> Amateur</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>C1011</td>
+                                    <td>50</td>
+                                    <td><i class="fas fa-medal bronze level_icon"></i> Bronze</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>C1213</td>
+                                    <td>10</td>
+                                    <td><i class="fas fa-medal starter level_icon"></i> Starter</td>
+                                </tr>
+                                <!-- Add more rows as necessary -->
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                </div>
+
+                <!-- footer -->
+                <div id="footer"></div>
+                <!-- footer -->
+
+            </div>
+
+            <!-- end dashboard inner -->
+
+        </div>
+    </div>
+    </div>
+
+    <div id="main_footer"></div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+    <script src="js/include.js"></script>
+</body>
+
+</html>

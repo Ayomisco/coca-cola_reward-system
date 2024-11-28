@@ -8,16 +8,16 @@
    <title>Settings - Retailer Dashboard</title>
    <!-- Include Bootstrap CSS -->
    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
    <style>
       .card-header {
-         background-color: #007bff;
+         background-color: #dc3545;
          color: white;
       }
 
       .form-control:focus {
          box-shadow: none;
-         border-color: #007bff;
+         border-color: #dc3545;
       }
 
       .setting-section {
@@ -26,6 +26,8 @@
 
       .setting-section .section-title {
          font-size: 1.25rem;
+                  color: #dc3545; /* Red title color */
+
          font-weight: bold;
       }
 
@@ -41,6 +43,16 @@
       .cancel-btn {
          background-color: #dc3545;
          color: white;
+      }
+
+      .btn {
+         font-weight: bold;
+      }
+
+      /* Add red to other elements as needed */
+      .form-check-input:checked {
+         background-color: #dc3545; /* Red checkbox */
+         border-color: #dc3545;
       }
    </style>
 </head>

@@ -5,7 +5,7 @@
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Coca-Cola Retailer Onboarding</title>
+   <title>Coca-Cola Retailer Onboarding - Confirmation</title>
    <link rel="icon" href="images/fevicon.png" type="image/png" />
    <link rel="stylesheet" href="css/bootstrap.min.css" />
    <link rel="stylesheet" href="style.css" />
@@ -22,79 +22,33 @@
             <div class="login_section">
                <div class="logo_login">
                   <div class="center">
-                    <!--<img width="210" src="" alt="Coca-Cola Logo" /> -->
+                     <!--<img width="210" src="" alt="Coca-Cola Logo" />-->
                   </div>
                   <br>
-                  
                </div>
                <div class="login_form">
-                  <form id="retailerRegistrationForm" action="dashboard.html" method="get">
-                     <fieldset>
-                        <div class="mb-3">
-                           <label for="storeName" class="form-label">Store Name</label>
-                           <input type="text" class="form-control" id="storeName" name="store_name"
-                              placeholder="Enter your store name" required />
-                        </div>
-                        <div class="mb-3">
-                           <label for="storeAddress" class="form-label">Store Address</label>
-                           <input type="text" class="form-control" id="storeAddress" name="store_address"
-                              placeholder="Enter store address" required />
-                        </div>
-                        <div class="mb-3">
-                           <label for="retailerID" class="form-label">Coca-Cola Retailer ID</label>
-                           <input type="text" class="form-control" id="retailerID" name="retailer_id"
-                              placeholder="Enter retailer ID" required />
-                        </div>
-                        <div class="mb-3">
-                           <label for="ownerName" class="form-label">Owner's Full Name</label>
-                           <input type="text" class="form-control" id="ownerName" name="owner_name"
-                              placeholder="Owner's full name" required />
-                        </div>
-                        <div class="mb-3">
-                           <label for="email" class="form-label">Email Address</label>
-                           <input type="email" class="form-control" id="email" name="email" placeholder="Email address"
-                              required />
-                        </div>
-                        <div class="mb-3">
-                           <label for="phoneNumber" class="form-label">Phone Number</label>
-                           <input type="tel" class="form-control" id="phoneNumber" name="phone_number"
-                              placeholder="Phone number" required />
-                        </div>
-                        <div class="mb-3">
-                           <label for="password" class="form-label">Password</label>
-                           <input type="password" class="form-control" id="password" name="password"
-                              placeholder="Create a password" required />
-                        </div>
-                        <div class="mb-3">
-                           <label for="confirmPassword" class="form-label">Confirm Password</label>
-                           <input type="password" class="form-control" id="confirmPassword" name="confirm_password"
-                              placeholder="Confirm your password" required />
-                        </div>
-                        <div class="field">
-                           <label>Already have an account? <a class="" style="color: red;"
-                                 href="authentication/login.html">Login</a></label>
-                        </div>
-                        <div class="d-flex center register">
-                           <button type="submit" class="btn btn-danger">Register</button>
-                        </div>
-                     </fieldset>
+                  <h4 class="text-center">Confirmation Page</h4>
+                  <p class="text-center">Enter the 6-digit code sent to your Brand Ambassador. This code will expire in
+                     10 minutes.</p>
+                  <form id="confirmationForm" action="success.html" method="get">
+                     <div class="mb-3">
+                        <label for="confirmationCode" class="form-label">Confirmation Code</label>
+                        <input type="text" class="form-control" id="confirmationCode" name="confirmation_code"
+                           placeholder="Enter 6-digit code" required maxlength="6" pattern="\d{6}" />
+                     </div>
+                     <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-danger">Verify Code</button>
+                     </div>
                   </form>
                </div>
             </div>
          </div>
       </div>
    </div>
+
    <script src="js/jquery.min.js"></script>
-   <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
-   <script src="js/animate.js"></script>
-   <script src="js/bootstrap-select.js"></script>
-   <script src="js/perfect-scrollbar.min.js"></script>
-   <script>
-      var ps = new PerfectScrollbar('#sidebar');
-   </script>
-   <script src="js/custom.js"></script>
-      <script src="js/reg_val.js"></script>
+   <script src="js/confirmation.js"></script>
 </body>
 
 </html>
