@@ -72,14 +72,6 @@ document.getElementById("retailerRegistrationForm").addEventListener("submit", f
     const contactNumberPattern = /^\d{10,15}$/;
 
     // Perform simple validation (can be expanded as per your requirements)
-    if (!storeName || !storeAddress || !ownerName || !email || !phoneNumber || !password || password !== confirmPassword) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Invalid Input',
-            text: 'Please fill all fields correctly.'
-        });
-        return;
-    }
 
     // Validate Business Name
     if (storeName === "") {
