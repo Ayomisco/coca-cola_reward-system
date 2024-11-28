@@ -60,13 +60,11 @@ document.getElementById("retailerRegistrationForm").addEventListener("submit", f
     const storeName = document.getElementById("storeName").value.trim();
     const storeAddress = document.getElementById("storeAddress").value.trim();
     const ownerName = document.getElementById("ownerName").value.trim();
-    const email = document.getElementById("email").value.trim();
     const phoneNumber = document.getElementById("phoneNumber").value.trim();
     const password = document.getElementById("password").value.trim();
     const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
-    // Regex pattern for email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   
 
     // Regex pattern for contact number validation (e.g., must be digits and 10-15 characters)
     const contactNumberPattern = /^\d{10,15}$/;
@@ -106,7 +104,7 @@ document.getElementById("retailerRegistrationForm").addEventListener("submit", f
     }
 
     // Validate Passwords
-    if (password.length < 8) {
+    if (password.length < 3) {
         Swal.fire({
             icon: 'error',
             title: 'Weak Password',
