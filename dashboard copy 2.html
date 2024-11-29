@@ -262,13 +262,13 @@
                            <div class="full graph_revenue">
                               <div class="row">
                                  <div class="col-md-12">
-                                    <canvas id="performanceChart" style="height: 300px;"></canvas>
+                                    <!-- Chart.js for advanced metrics visualization -->
+                                    <canvas id="performanceChart"></canvas>
                                  </div>
                               </div>
                            </div>
                         </div>
                      </div>
-
 
                      <!-- Rewards Section -->
                      <div class="col-md-6">
@@ -568,57 +568,27 @@
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-         const ctx = document.getElementById('performanceChart').getContext('2d');
-         const performanceChart = new Chart(ctx, {
-            type: 'line', // Specify the chart type
-            data: {
-               labels: ['January', 'February', 'March'], // Example time period labels
-               datasets: [{
-                  label: 'Performance Over Time',
-                  data: [143, 122, 133 ], // Example performance data
-                  backgroundColor: 'rgba(244, 0, 0, 0.2)', // Transparent red fill
-                  borderColor: 'rgba(244, 0, 0, 1)', // Solid red border
-                  borderWidth: 2,
-                  fill: true, // Fill under the line
-                  tension: 0.3 // Smooth curves
-               }]
-            },
-            options: {
-               responsive: true,
-               maintainAspectRatio: false,
-               plugins: {
-                  legend: {
-                     display: true,
-                     position: 'top'
-                  },
-                  tooltip: {
-                     enabled: true
-                  }
-               },
-               scales: {
-                  x: {
-                     title: {
-                        display: true,
-                        text: 'Months'
-                     }
-                  },
-                  y: {
-                     title: {
-                        display: true,
-                        text: 'Performance Points'
-                     },
-                     beginAtZero: true
-                  }
+      var ctx = document.getElementById('performanceChart').getContext('2d');
+      var performanceChart = new Chart(ctx, {
+         type: 'bar',
+         data: {
+            labels: ['January', 'February', 'March'],
+            datasets: [{
+               label: 'Your Performance',
+               data: [65, 59, 80],
+               backgroundColor: 'rgba(54, 162, 235, 0.2)',
+               borderColor: 'rgba(54, 162, 235, 1)',
+               borderWidth: 1
+            }]
+         },
+         options: {
+            scales: {
+               y: {
+                  beginAtZero: true
                }
             }
-         });
+         }
       });
-   </script>
-
-
-   <script>
-  
 
       function toggleBreakdown() {
             const breakdown = document.getElementById('breakdown');
