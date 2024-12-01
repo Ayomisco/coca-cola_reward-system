@@ -40,7 +40,7 @@
       }
 
       .progress-bar {
-         background-color: #dc9c9c !important;
+         background-color: gold !important;
       }
 
       .progress-bar-animated {
@@ -287,10 +287,10 @@
                                  <h4 style="color: #d2b7b7;">Your Status: <span style="color: gold;">Gold</span> </h4>
                                  <p style="color: #faf2f2;">Gold Tier</p>
                                  <div class="progress">
-                                    <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar" style="width: 50%;">
+                                    <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar" style="width: 80%;">
                                     </div>
                                  </div>
-                                 <p style="color: #d2b7b7;">Progress: <span style="color: white; font-size: xx-large;"> 50% </span></p>
+                                 <p style="color: #d2b7b7;">Progress: <span style="color: white; font-size: xx-large;"> 80% </span></p>
                               </div>
                            </div>
                         </div>
@@ -337,27 +337,29 @@
                   </div>
 
                   <div class="row">
-                     <div class="col-md-12">
-                        <div class="card reward_card ">
-                           <div class="card-header mb-4">
-                              <i class="fas fa-trophy status_icon"></i>
-                              Reward Criteria
+                     <div class="col-12">
+                        <div class="card reward_card">
+                           <div class="card-header mb-4 text-center">
+                              <i class="fas fa-trophy status_icon" style="font-size: 24px; color: gold;"></i>
+                              <span style="font-size: 18px; font-weight: bold;">Reward Criteria</span>
                            </div>
-                           <div class="">
-
-                              <div class="row">
-                                 <div class=" col-sm-3">
-                                    <img src="images/landing_page/Gold_1.png" alt="" style="width: 200px; height: 100; border-radius: 10px; margin-bottom: 10px;">
+                           <div class="card-body">
+                              <div class="row text-center">
+                                 <div class="col-6 col-md-3 mb-3">
+                                    <img src="images/landing_page/Platinum.png" alt="Platinum Reward" class="img-fluid rounded"
+                                       style="max-width: 100%; height: auto;">
                                  </div>
-                                 <div class=" col-sm-3">
-                                    <img src="images/landing_page/Gold_1.png" alt="" style="width: 200px; height: 100; border-radius: 10px;  margin-bottom: 10px;">
-                                 </div> 
-
-                                 <div class=" col-sm-3">
-                                    <img src="images/landing_page/Gold_1.png" alt="" style="width: 200px; height: 100; border-radius: 10px;  margin-bottom: 10px;">
+                                 <div class="col-6 col-md-3 mb-3">
+                                    <img src="images/landing_page/Gold_1.png" alt="Gold Reward" class="img-fluid rounded"
+                                       style="max-width: 100%; height: auto;">
                                  </div>
-                                 <div class=" col-sm-3">
-                                    <img src="images/landing_page/Gold_1.png" alt="" style="width: 200px; height: 100; border-radius: 10px;">
+                                 <div class="col-6 col-md-3 mb-3">
+                                    <img src="images/landing_page/Silver.png" alt="Silver Reward" class="img-fluid rounded"
+                                       style="max-width: 100%; height: auto;">
+                                 </div>
+                                 <div class="col-6 col-md-3 mb-3">
+                                    <img src="images/landing_page/Starter.png" alt="Starter Reward" class="img-fluid rounded"
+                                       style="max-width: 100%; height: auto;">
                                  </div>
                               </div>
                            </div>
@@ -605,54 +607,73 @@
    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-   <script>
-      document.addEventListener('DOMContentLoaded', function () {
-         const ctx = document.getElementById('performanceChart').getContext('2d');
-         const performanceChart = new Chart(ctx, {
-            type: 'line', // Specify the chart type
-            data: {
-               labels: ['January', 'February', 'March'], // Example time period labels
-               datasets: [{
-                  label: 'Performance Over Time',
-                  data: [143, 122, 133 ], // Example performance data
-                  backgroundColor: 'rgba(244, 0, 0, 0.2)', // Transparent red fill
-                  borderColor: 'rgba(244, 0, 0, 1)', // Solid red border
-                  borderWidth: 2,
-                  fill: true, // Fill under the line
-                  tension: 0.3 // Smooth curves
-               }]
-            },
-            options: {
-               responsive: true,
-               maintainAspectRatio: false,
-               plugins: {
-                  legend: {
-                     display: true,
-                     position: 'top'
-                  },
-                  tooltip: {
-                     enabled: true
-                  }
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+      const ctx = document.getElementById('performanceChart').getContext('2d');
+
+      const performanceChart = new Chart(ctx, {
+         type: 'bar', // Line chart
+         data: {
+            labels: ['Week 1','Week 2', 'Week 3', 'Week 4'], // Time labels
+            datasets: [{
+               label: 'Performance Over Time',
+               data: [143, 122, 133, 139], // Performance data
+               backgroundColor: 'rgba(75, 192, 192, 0.2)', // Light teal background
+               borderColor: 'rgba(75, 192, 192, 1)', // Solid teal line
+               borderWidth: 2,
+               fill: true, // Filled area under the curve
+               tension: 0.4 // Smooth curves
+            }]
+         },
+         options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+               legend: {
+                  display: true,
+                  position: 'top'
                },
-               scales: {
-                  x: {
-                     title: {
-                        display: true,
-                        text: 'Months'
-                     }
-                  },
-                  y: {
-                     title: {
-                        display: true,
-                        text: 'Performance Points'
-                     },
-                     beginAtZero: true
+               datalabels: {
+                  color: 'black', // Label text color
+                  anchor: 'end', // Position labels at the end of each point
+                  align: 'top', // Align labels above the points
+                  formatter: (value) => `${value}`, // Format the labels
+                  font: {
+                     size: 12, // Font size
+                     weight: 'bold' // Font weight
                   }
                }
+            },
+            scales: {
+               x: {
+                  title: {
+                     display: true,
+                     text: 'Time Period (Weeks)'
+                  },
+                  grid: {
+                     drawOnChartArea: false
+                  }
+               },
+               y: {
+                  title: {
+                     display: true,
+                     text: 'Performance Score'
+                  },
+                  beginAtZero: true,
+                  ticks: {
+                     stepSize: 20
+                  }
+               }
+            },
+            animation: {
+               duration: 1000,
+               easing: 'easeOutBounce'
             }
-         });
+         },
+         plugins: [ChartDataLabels] // Activate the data labels plugin
       });
-   </script>
+   });
+</script>
 
 
    <script>
@@ -694,7 +715,8 @@
    });
 </script>
 
- 
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
 </body>
 
 </html>
