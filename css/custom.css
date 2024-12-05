@@ -3,3 +3,219 @@
 -------------------------------------------------------------------*/
 
 /** ADD YOUR AWESOME CODES HERE **/
+
+
+body {
+    background-color: #f4f7f6;
+    font-family: 'Arial', sans-serif;
+}
+
+.page_title h2 {
+    color: #f40000;
+}
+
+.dark_bg {
+    background-color: #f3e5e5;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.white_shd {
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.graph_head h2 {
+    color: #f40000;
+}
+
+.progress-bar {
+    background-color: gold !important;
+}
+
+.progress-bar-animated {
+    animation: progress-bar-stripes 2s linear infinite;
+}
+
+.column3 {
+    margin-bottom: 30px;
+}
+
+.container-fluid {
+    padding-top: 20px;
+}
+
+.midde_cont {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.heading1 h2 {
+    font-size: 1.5em;
+}
+
+.container-fluid .row {
+    margin-bottom: 20px;
+}
+
+.column_title h2 {
+    color: #333;
+}
+
+.full {
+    padding: 15px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    /* More neutral button color */
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #d40000;
+    border-color: #f40000;
+}
+
+.progress {
+    margin: 10px 0;
+}
+
+
+.card-header {
+    background-color: #f52626;
+    color: white;
+}
+
+.reward_card {
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+
+}
+
+.status_card {
+    background-color: #f40000;
+    color: white !important;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.status_icon {
+    font-size: 2em;
+    margin-right: 10px;
+    color: #f3f3e5dd;
+    /* Blue icon for clarity */
+
+}
+
+.gold {
+    font-size: 2em;
+    margin-right: 10px;
+    color: gold;
+    /* Blue icon for clarity */
+
+}
+
+.expandable_content {
+    display: none;
+    background-color: #f4f7f6;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.expandable_content.show {
+    display: block;
+}
+
+
+/* Leaderboard */
+
+.table th,
+.table td {
+    text-align: center;
+}
+
+.level_icon {
+    font-size: 20px;
+}
+
+.card-header {
+    text-transform: uppercase;
+}
+
+.platinum {
+    color: #e5e4e2;
+    /* Platinum-like color */
+}
+
+.gold {
+    color: gold;
+}
+
+.silver {
+    color: silver;
+}
+
+.bronze {
+    color: #cd7f32;
+}
+
+.starter {
+    color: #32cd32;
+}
+
+
+.highlight-current-user {
+    animation: flash 1s infinite;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff7b00;
+}
+
+@keyframes flash {
+    0% {
+        background-color: #fff700;
+    }
+
+    50% {
+        background-color: #b37a00;
+    }
+
+    100% {
+        background-color: #ff8000;
+    }
+}
+
+.view-more-btn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.container-fluid {
+    padding-top: 20px;
+}
+
+.page_title h2 {
+    color: #333;
+}
+
+.stat_link {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
+    margin-top: 10px;
+    display: block;
+}
+
+.stat_link:hover {
+    color: #0056b3;
+}
+
